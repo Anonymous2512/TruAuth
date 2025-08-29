@@ -505,6 +505,99 @@ button:hover {
   font-size: 26px;
   font-weight: 700;
 }
+.tab-switcher {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  gap: 40px; /* space between the two */
+  margin: 30px 0;
+}
+.tab {
+  position: relative;
+  cursor: pointer;
+  padding: 8px 16px;
+  background: none;
+  border: none;
+  font-size: 25px;
+  font-weight: 500;
+  color: #0176d3;
+}
+.tab:hover {
+  color: #032d60;
+}
+/* underline effect */
+.tab::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* space below text */
+  width: 0;
+  height: 2px;
+  background-color: #676868; /* theme color */
+  transition: width 0.3s ease-in-out;
+}
+
+.tab:hover::after {
+  width: 100%;
+}
+
+/* keep line for active tab */
+.tab.active::after {
+  width: 100%;
+}
+.active {
+  color: #032d60;
+}
+/* Smooth content fade */
+#tab-content {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+#tab-content.fade-out {
+  opacity: 0;
+  transform: translateY(10px);
+}
+/* fade animations */
+#tab-content.fade-out {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#tab-content.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* card animation */
+.container3-card-items {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: cardFadeIn 0.6s ease forwards;
+}
+
+.container3-card-items:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.container3-card-items:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.container3-card-items:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* section 5 */
 .container5 {

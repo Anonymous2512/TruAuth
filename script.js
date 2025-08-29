@@ -3,6 +3,7 @@ const tabContent = document.getElementById("tab-content");
 
 const content = {
   customers: `
+         <div class="card-wrapper">
     <div class="container3-card-items">
       <div class="container3-card-img">
         <img src="./images/img1.webp" alt="" />
@@ -10,10 +11,15 @@ const content = {
       </div>
       <div class="container3-card-content">
         <h3 class="sub-heading2-link">Customer Trust</h3>
-        <p>Discover how TruAuth helps customers verify authenticity of products and build trust.</p>
+        <p>
+          Discover how TruAuth helps customers verify authenticity of products
+          and build trust.
+        </p>
         <a href="#">Start Learning</a>
       </div>
     </div>
+    </div>
+<div class="card-wrapper">
     <div class="container3-card-items">
       <div class="container3-card-img">
         <img src="./images/img2.webp" alt="" />
@@ -21,10 +27,15 @@ const content = {
       </div>
       <div class="container3-card-content">
         <h3 class="sub-heading2-link">Easy Verification</h3>
-        <p>Learn simple steps customers can take to check product claims instantly with TruAuth.</p>
+        <p>
+          Learn simple steps customers can take to check product claims
+          instantly with TruAuth.
+        </p>
         <a href="#">Explore</a>
       </div>
     </div>
+</div>
+<div class="card-wrapper">
     <div class="container3-card-items">
       <div class="container3-card-img">
         <img src="./images/img3.webp" alt="" />
@@ -32,12 +43,17 @@ const content = {
       </div>
       <div class="container3-card-content">
         <h3 class="sub-heading2-link">Peace of Mind</h3>
-        <p>Understand how verified transparency ensures you always make safe and informed choices.</p>
+        <p>
+          Understand how verified transparency ensures you always make safe
+          and informed choices.
+        </p>
         <a href="#">Learn More</a>
       </div>
     </div>
+  </div>
   `,
   brands: `
+  <div class="card-wrapper">
     <div class="container3-card-items">
       <div class="container3-card-img">
         <img src="./images/img1.webp" alt="" />
@@ -49,6 +65,8 @@ const content = {
         <a href="#">Get Started</a>
       </div>
     </div>
+    </div>
+    <div class="card-wrapper">
     <div class="container3-card-items">
       <div class="container3-card-img">
         <img src="./images/img2.webp" alt="" />
@@ -60,6 +78,8 @@ const content = {
         <a href="#">Discover</a>
       </div>
     </div>
+    </div>
+    <div class="card-wrapper">
     <div class="container3-card-items">
       <div class="container3-card-img">
         <img src="./images/img3.webp" alt="" />
@@ -70,6 +90,7 @@ const content = {
         <p>Stand out with verified transparency and build a stronger brand presence in competitive markets.</p>
         <a href="#">Learn More</a>
       </div>
+    </div>
     </div>
   `,
 };

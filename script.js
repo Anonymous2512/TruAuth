@@ -116,3 +116,46 @@ tabs.forEach((tab) => {
     }, 300); // match CSS animation duration
   });
 });
+const heading = document.getElementById("heading-text");
+const sentences = [
+  "Verify product authenticity and claims, instantly.",
+  "Trust delivered, tamper-proof digital identity for all.",
+  "Simple integration, transparent verification, effortless brand trust.",
+];
+
+let sentenceIndex = 0;
+let charIndex = 0;
+let typing = true; // typing or deleting
+
+function typeLoop() {
+  const currentSentence = sentences[sentenceIndex];
+
+  if (typing) {
+    // typing characters
+    heading.textContent = currentSentence.slice(0, charIndex + 1);
+    charIndex++;
+
+    if (charIndex === currentSentence.length) {
+      typing = false;
+      setTimeout(typeLoop, 1500); // pause before deleting
+      return;
+    }
+    setTimeout(typeLoop, 80); // typing speed
+  } else {
+    // deleting characters
+    heading.textContent = currentSentence.slice(0, charIndex - 1);
+    charIndex--;
+
+    if (charIndex === 0) {
+      typing = true;
+      sentenceIndex = (sentenceIndex + 1) % sentences.length; // move to next sentence
+      setTimeout(typeLoop, 500); // pause before typing next
+      return;
+    }
+    setTimeout(typeLoop, 40); // deleting speed
+  }
+}
+
+// start loop
+heading.textContent = "";
+window.onload = typeLoop;
